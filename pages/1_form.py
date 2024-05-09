@@ -114,9 +114,9 @@ with st.container():
                 # df = parse_resumes("/".join([data_path, selected_data_folder]))
                 # print(res_path)
                 if model_choice.lower() == 'xlnet':
-                    model_path = "/home/hussnain/PycharmProjects/thesis/models/xlnet-ner-experience-full-20230405T215230Z-001/xlnet-ner-experience-full/xlnet_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
+                    model_path = "/models/xlnet-ner-experience-full-20230405T215230Z-001/xlnet-ner-experience-full/xlnet_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
                 elif model_choice.lower() == 'roberta':
-                    model_path = "/home/hussnain/PycharmProjects/thesis/models/roberta-ner-experience-full-20240302T133501Z-001/roberta-ner-experience-full/roberta_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
+                    model_path = "/models/roberta-ner-experience-full-20240302T133501Z-001/roberta-ner-experience-full/roberta_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
                 else:
                     model_path = ""
                 df = parse_resumes(res_path, model_path)
