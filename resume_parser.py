@@ -44,8 +44,8 @@ def add_to_db(new_df):
     return combined_df
 
 
-def parse_resumes(resumes_path, model_path):
-    print(resumes_path)
+def parse_resumes(resumes_path, model_name):
+    # print(resumes_path)
     files = os.listdir(resumes_path)
 
     candidate_list = []
@@ -55,11 +55,11 @@ def parse_resumes(resumes_path, model_path):
         temp_files = set(files)
         files = temp_files.difference(old_files)
 
-    if model_path != "":
-        print(model_path)
-        nlp = spacy.load(model_path)
+    if model_name != "":
+        # print(model_name)
+        nlp = spacy.load(model_name)
         for file in files:
-            print(f'{resumes_path}/{file}')
+            # print(f'{resumes_path}/{file}')
 
             f = open(f'{resumes_path}/{file}', "r")
             mystr = f.read()
@@ -107,7 +107,7 @@ def parse_resumes(resumes_path, model_path):
         Do it for the following resume: \n \n \n'''
 
         for file in files:
-            print(f'{resumes_path}/{file}')
+            # print(f'{resumes_path}/{file}')
             f = open(f'{resumes_path}/{file}', "r")
             mystr = f.read()
             input_str = instruction + mystr
@@ -123,7 +123,7 @@ def parse_resumes(resumes_path, model_path):
 
             skills, pub, maj, degr = [], [], [], []
             output_dict = json.loads(response.choices[0].message.content)
-            print(output_dict)
+            # print(output_dict)
             skills = output_dict['skills']
             pub = output_dict['publications']
             try:

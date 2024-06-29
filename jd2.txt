@@ -1,0 +1,17 @@
+We are seeking a fresh Data Scientist. As a Data Scientist, you will play a crucial role in developing and implementing cutting-edge machine learning models and algorithms to enhance our educational technology solutions.
+
+What you’ll do:
+• Design and develop machine learning models and algorithms for various educational applications, such as personalized learning, recommendation systems, and predictive analytics.
+• Explore and preprocess large-scale datasets to extract meaningful insights and features for training machine learning models.
+• Implement and optimize machine learning algorithms using programming languages such as Python, R, or Java, along with frameworks like TensorFlow or PyTorch.
+• Evaluate and compare the performance of different machine learning models through experimentation and validation techniques.
+• Deploy and integrate machine learning models into our existing educational platforms, ensuring scalability, reliability, and efficiency.
+• Stay up-to-date with the latest advancements in machine learning techniques, frameworks, and tools, and apply them to enhance our solutions.
+
+Requirements
+• Master's degree in Computer Science, Data Science, Machine Learning, or a related field, or alternatively, a Bachelor's degree in Computer Science or Data Science coupled with certifications from esteemed organizations like Microsoft, AWS, Google, and IBM.
+• Proven experience as a Machine Learning Engineer or a similar role, with a strong track record of successfully developing and deploying machine learning models in real-world applications.Proficiency in programming languages such as Python and experience with machine learning frameworks like TensorFlow, PyTorch, or scikit-learn.
+• Solid understanding of machine learning algorithms, statistical analysis, data preprocessing techniques and either in Computer Vision or Natural language processing.
+• Strong problem-solving skills and the ability to analyze complex datasets to derive actionable insights.
+• Excellent communication, collaboration and presentation skills.
+• Nice to have:Experience with big data processing tools and technologies, such as Hadoop, Spark, or SQL

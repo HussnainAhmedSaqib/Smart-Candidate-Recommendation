@@ -9,12 +9,14 @@ from streamlit.components.v1 import html
 # import pandas as pd
 import tkinter as tk
 from tkinter import filedialog
+from pathlib import Path
+
 
 root = tk.Tk()
 root.withdraw()
 root.wm_attributes('-topmost', 1)
 selected_data_folder = ""
-
+home_path = "" ##folder path
 if os.path.exists("job_net1.html"):
     os.remove("job_net1.html")
 if os.path.exists("path.txt"):
@@ -27,6 +29,8 @@ if os.path.exists("file.txt"):
     os.remove("file.txt")
 if os.path.exists("pub_type.html"):
     os.remove("pub_type.html")
+if os.path.exists("experience.html"):
+    os.remove("experience.html")
 
 st.set_page_config(page_title="CV Linker", layout="wide", initial_sidebar_state="collapsed")
 
@@ -73,12 +77,26 @@ with st.container():
     st.title("Find Suitable Candidates for your Job Role Hassle Free")
     st.title('Select Data Folder')
     st.write('Please select a folder:')
-    clicked = st.button('Select directory')
+    uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+    if uploaded_files is not None:
+        for file in uploaded_files:
+            file_path = Path(f'{home_path}/tmp/{file.name}')  # Save the uploaded file temporarily
+            if not os.path.exists(f'{home_path}/tmp/'):
+                os.makedirs(f'{home_path}/tmp/')
+            # try:
+            #     os.mknod(file_path)
+            #     print(f"File '{file_path}' created successfully.")
+            # except OSError as e:
+            #     print(f"Error creating file: {e}")
+            with open(file_path, 'w+') as f:
+                f.write(file.getvalue().decode("utf-8"))
+    clicked = st.button('Next Page')
     if clicked:
-        selected_data_folder = st.text_input('Selected folder:', filedialog.askdirectory(master=root))
-        f = open("path.txt", "w")
-        print(selected_data_folder)
-        f.write(selected_data_folder)
-        f.close()
+        # selected_data_folder = st.text_input('Selected folder:', filedialog.askdirectory(master=root))
+        # f = open("path.txt", "w")
+        # print(selected_data_folder)
+        # f.write(selected_data_folder)
+        # f.close()
+        st.write("File uploaded!")
         nav_page("form")
 

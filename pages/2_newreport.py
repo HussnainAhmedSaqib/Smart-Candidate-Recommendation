@@ -9,6 +9,8 @@ from streamlit_extras.switch_page_button import switch_page
 # from zipfile import ZipFile
 import os
 
+res_path = '' ## set path where to store resumes (temp folder in your project directory)
+
 
 # if os.path.exists("resumes.zip"):
 #     os.remove("resumes.zip")
@@ -130,9 +132,9 @@ with st.container():
         res_list = df['Name'].values
     except:
         st.caption("No Table found")
-    f = open("path.txt", "r")
-    res_path = f.read()
-    f.close()
+    # f = open("path.txt", "r")
+    # res_path = f.read()
+    # f.close()
     # print(res_path)
     compress(res_path, res_list)
 
@@ -160,3 +162,5 @@ with st.container():
     #     )
     if st.button("← Prev"):
         switch_page("form")
+    if st.button("Home"):
+        switch_page("main")

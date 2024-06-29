@@ -21,7 +21,7 @@ from streamlit_extras.switch_page_button import switch_page
 #     os.remove("file.txt")
 
 st.set_page_config(page_title="CV Linker", layout="wide", initial_sidebar_state="collapsed")
-
+res_path = '' ## set path where to store resumes (temp folder in your project directory)
 
 def nav_page(page_name, timeout_secs=3):
     nav_script = """
@@ -82,9 +82,9 @@ with st.container():
         publications_multiplier = st.number_input('Assign weight to Publications:', value=1.0, step=0.5)
 
         if st.form_submit_button('Submit'):
-            f = open("path.txt", "r")
-            res_path = f.read()
-            f.close()
+            # f = open("path.txt", "r")
+            # res_path = f.read()
+            # f.close()
             if os.path.exists(os.path.join(res_path, "shortlisted_resumes.zip")):
                 os.remove(os.path.join(res_path, "shortlisted_resumes.zip"))
 
@@ -114,12 +114,12 @@ with st.container():
                 # df = parse_resumes("/".join([data_path, selected_data_folder]))
                 # print(res_path)
                 if model_choice.lower() == 'xlnet':
-                    model_path = "/models/xlnet-ner-experience-full-20230405T215230Z-001/xlnet-ner-experience-full/xlnet_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
+                    model_name = "en_xlnet_res_pipeline"
                 elif model_choice.lower() == 'roberta':
-                    model_path = "/models/roberta-ner-experience-full-20240302T133501Z-001/roberta-ner-experience-full/roberta_model/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0"
+                    model_name = "en_roberta_res_pipeline"
                 else:
-                    model_path = ""
-                df = parse_resumes(res_path, model_path)
+                    model_name = ""
+                df = parse_resumes(res_path, model_name)
 
                 num_of_pubs = []
                 for i in range(len(df)):
@@ -150,7 +150,7 @@ with st.container():
                     for i in range(len(df2)):
                         skills_found.append(
                             [value for value in list(df2['Skills'].iloc[i]) if value in list(skill_df['Skill'])])
-                    print(skills_found)
+                    # print(skills_found)
                     df2['Skills_found'] = skills_found
                     num_of_skills_found = []
                     for i in range(len(df2)):
@@ -177,7 +177,7 @@ with st.container():
                     for i in range(len(df2)):
                         majors_found.append(
                             [value for value in list(df2['Majors'].iloc[i]) if value in list(major_df['Majors'])])
-                    print(majors_found)
+                    # print(majors_found)
                     df2['Majors_found'] = majors_found
                     num_of_majors_found = []
                     for i in range(len(df2)):
@@ -228,7 +228,7 @@ with st.container():
             else:
                 st.error('Job description in Empty', icon="🚨")
     if st.button("← Prev"):
-        switch_page("testapp")
+        switch_page("main")
         # HtmlFile = open("job_net1.html", 'r', encoding='utf-8')
         # source_code = HtmlFile.read()
         # # print(source_code)

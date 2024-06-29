@@ -1,0 +1,27 @@
+ Conduct exploratory data analysis (EDA) to understand patterns, trends, and anomalies in large datasets.
+• Clean, preprocess, and transform raw data into usable formats for analysis.
+• Perform statistical analysis and hypothesis testing to derive actionable insights.
+• Assist in the development and implementation of machine learning models for various business applications.
+• Collaborate with senior data scientists to fine-tune models, optimize performance, and ensure scalability.
+• Work on feature engineering and selection to enhance model accuracy.
+• Utilize programming languages such as Python for data manipulation, analysis, and model development.
+• Stay updated on industry best practices and emerging technologies in data science.
+• Collaborate with cross-functional teams, including business analysts, software engineers, and domain experts, to understand requirements and deliver impactful solutions.
+• Participate in knowledge-sharing sessions and contribute to a collaborative team environment.
+• Document data analysis methodologies, model development processes, and results.
+• Prepare and present findings and insights to both technical and non-technical stakeholders.
+• Create clear and concise reports to communicate complex concepts to diverse audiences.
+
+We are looking for
+• Education: BS or MS degree in a quantitative field such as Computer Science, Data Science, Statistics or a related discipline.
+• Experience: Fresh to 1 year
+
+Skills
+• Strong programming skills in languages such Python and query language such as SQL.
+• Familiarity with machine learning algorithms and techniques.
+• Experience with data manipulation and analysis using libraries such as pandas, NumPy, or equivalent.
+• Good understanding of statistical concepts and hypothesis testing.
+• Excellent problem-solving skills and attention to detail.
+• Knowledge of big data technologies (e.g., Spark, Hadoop) will be a plus.
+• Strong communication skills to convey technical concepts to non-technical stakeholders.
+• Ability to work collaboratively in a team environment.

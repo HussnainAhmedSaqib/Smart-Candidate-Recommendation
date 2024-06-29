@@ -77,9 +77,9 @@ def make_kg(data_graph, data_graph_resume, num_res, link):
                 # print(data_graph_resume['document'][j])
                 # print(temp)
                 if data_graph_resume['document'][j] in temp:
-                    print(data_graph['JOBID'])
-                    print(data_graph_resume['document'][j])
-                    print(job_net.nodes[i]['id'])
+                    # print(data_graph['JOBID'])
+                    # print(data_graph_resume['document'][j])
+                    # print(job_net.nodes[i]['id'])
                     skills_list.append(job_net.nodes[i]['id'])
                     resume_name_list.append(data_graph_resume['document'][j])
     word_counts = Counter(resume_name_list)

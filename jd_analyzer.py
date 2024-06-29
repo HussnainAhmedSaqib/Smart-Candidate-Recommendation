@@ -3,9 +3,9 @@ import string
 import spacy
 from spacy.tokens import DocBin, Doc
 from spacy.training.example import Example
-from models.roberta_re.roberta_re.roberta_model.rel_component.rel_pipe import make_relation_extractor, score_relations
-from models.roberta_re.roberta_re.roberta_model.rel_component.rel_model import create_relation_model, \
-    create_classification_layer, create_instances, create_tensors
+# from models.roberta_re.roberta_re.roberta_model.rel_component.rel_pipe import make_relation_extractor, score_relations
+# from models.roberta_re.roberta_re.roberta_model.rel_component.rel_model import create_relation_model, \
+#     create_classification_layer, create_instances, create_tensors
 
 # jobid_list=[]
 skill_list = []
@@ -21,9 +21,8 @@ def post_process_skills(skill_list_unprocessed):
 
 def analyze(text):
     nlp = spacy.load(
-        "/home/hussnain/PycharmProjects/thesis/models/job_description_ner/job_description/NER/xlnet_ner/en_pipeline-0.0.0/en_pipeline/en_pipeline-0.0.0")
-    nlp2 = spacy.load(
-        "/home/hussnain/PycharmProjects/thesis/models/roberta_re/roberta_re/roberta_model/rel_component/training/model-best")
+        "en_xlnet_jd_pipeline")
+    nlp2 = spacy.load("en_roberta_re_pipeline")
     nlp2.add_pipe('sentencizer')
     experience_year = []
     experience_skills = []
@@ -34,7 +33,7 @@ def analyze(text):
     for doc in nlp.pipe(text, disable=["tagger"]):
         skills = [e.text for e in doc.ents if e.label_ == 'SKILLS']
         skills = post_process_skills(skills)
-        print(skills)
+        # print(skills)
     for name, proc in nlp2.pipeline:
         doc = proc(doc)
     for value, rel_dict in doc._.rel.items():
